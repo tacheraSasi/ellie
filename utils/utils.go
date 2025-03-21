@@ -147,3 +147,10 @@ func ClearScreen() {
 func GetRandomAd() string {
 	return Ads[rand.IntN(len(Ads))]
 }
+
+func IsErr(err error,msg string){
+	if err != nil{
+		ErrorStyle.Println(msg,err)
+		return
+	}
+}
