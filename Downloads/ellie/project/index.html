@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellie - AI-Powered CLI Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo">🤖</span>
+                <span class="nav-title">Ellie</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Features</a>
+                <a href="#installation">Install</a>
+                <a href="docs.html">Docs</a>
+                <a href="https://github.com/tacheraSasi/ellie" target="_blank" class="nav-cta">GitHub</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">✨ Version 0.0.91 Now Available</span>
+                </div>
+                <h1 class="hero-title">
+                    Meet Ellie, Your <span class="gradient-text">AI-Powered</span> CLI Companion
+                </h1>
+                <p class="hero-description">
+                    Transform your terminal experience with intelligent automation, Git workflows, 
+                    and productivity hacks. Built for developers who love efficiency.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary" id="installBtn">
+                        <span>🚀 Quick Install</span>
+                    </button>
+                    <button class="btn-secondary" id="demoBtn">
+                        <span>▶️ See Demo</span>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Commands Automated</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Platforms Supported</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Built-in Features</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-terminal">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-red"></span>
+                            <span class="btn-yellow"></span>
+                            <span class="btn-green"></span>
+                        </div>
+                        <span class="terminal-title">ellie@terminal</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command" id="typewriter"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        <div class="terminal-output" id="terminalOutput"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Developers Love Ellie</h2>
+                <p>Everything you need to supercharge your terminal workflow</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Git Superpowers</h3>
+                    <p>Conventional commits, intelligent branching, and automated workflows with interactive prompts.</p>
+                    <div class="feature-tags">
+                        <span class="tag">Conventional Commits</span>
+                        <span class="tag">Auto Push</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI Integration</h3>
+                    <p>Built-in ChatGPT functionality for instant help, code review, and intelligent suggestions.</p>
+                    <div class="feature-tags">
+                        <span class="tag">ChatGPT</span>
+                        <span class="tag">Code Review</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Smart Todo Management</h3>
+                    <p>Lightweight task tracking with categories, priorities, and completion status.</p>
+                    <div class="feature-tags">
+                        <span class="tag">Categories</span>
+                        <span class="tag">Priorities</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Service Control</h3>
+                    <p>Manage Apache, MySQL, and other services with simple commands across all platforms.</p>
+                    <div class="feature-tags">
+                        <span class="tag">Apache</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Network Wizardry</h3>
+                    <p>WiFi connection management, network status monitoring, and connectivity diagnostics.</p>
+                    <div class="feature-tags">
+                        <span class="tag">WiFi</span>
+                        <span class="tag">Monitoring</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Project Switcher</h3>
+                    <p>Quick navigation between projects with tags, descriptions, and smart search.</p>
+                    <div class="feature-tags">
+                        <span class="tag">Quick Switch</span>
+                        <span class="tag">Search</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="installation" id="installation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Installation</h2>
+                <p>Get started with Ellie in under 60 seconds</p>
+            </div>
+            <div class="install-options">
+                <div class="install-method active" data-method="brew">
+                    <div class="method-header">
+                        <span class="method-icon">🍺</span>
+                        <span class="method-name">Homebrew</span>
+                        <span class="method-badge">Recommended</span>
+                    </div>
+                </div>
+                <div class="install-method" data-method="intel">
+                    <div class="method-header">
+                        <span class="method-icon">🖥️</span>
+                        <span class="method-name">macOS Intel</span>
+                    </div>
+                </div>
+                <div class="install-method" data-method="silicon">
+                    <div class="method-header">
+                        <span class="method-icon">💻</span>
+                        <span class="method-name">macOS Silicon</span>
+                    </div>
+                </div>
+            </div>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-title" id="codeTitle">Homebrew Installation</span>
+                    <button class="copy-btn" id="copyBtn">
+                        <span class="copy-text">Copy</span>
+                        <span class="copy-icon">📋</span>
+                    </button>
+                </div>
+                <pre class="code-content" id="codeContent"><code># One-time setup
+brew tap beyondEllie/ellie
+
+# Install CLI
+brew install ellie</code></pre>
+            </div>
+            <div class="install-verify">
+                <h4>Verify Installation</h4>
+                <div class="verify-command">
+                    <code>ellie --version</code>
+                    <span class="verify-output">Ellie CLI Version: 0.0.91</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>See Ellie in Action</h2>
+                <p>Experience the magic of intelligent terminal automation</p>
+            </div>
+            <div class="demo-tabs">
+                <button class="demo-tab active" data-demo="git">Git Workflow</button>
+                <button class="demo-tab" data-demo="todo">Todo Management</button>
+                <button class="demo-tab" data-demo="projects">Project Switching</button>
+            </div>
+            <div class="demo-content">
+                <div class="demo-terminal">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-red"></span>
+                                <span class="btn-yellow"></span>
+                                <span class="btn-green"></span>
+                            </div>
+                            <span class="terminal-title">ellie-demo</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="demo-output" id="demoOutput">
+                                <!-- Content will be dynamically loaded -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="getting-started">
+        <div class="container">
+            <div class="section-header">
+                <h2>Getting Started</h2>
+                <p>Your journey to terminal mastery begins here</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Install Ellie</h3>
+                        <p>Choose your preferred installation method and get Ellie running in seconds.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Configure Settings</h3>
+                        <p>Set up your username, OpenAI API key, and personalize your experience.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Start Automating</h3>
+                        <p>Begin using Ellie's powerful features to streamline your development workflow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Development Team</h2>
+                <p>Final year students from the Institute of Finance Management, Department of Information Technology</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <span>AA</span>
+                    </div>
+                    <h3>ADO A MWAMBA</h3>
+                    <p class="member-role">Frontend Developer</p>
+                    <p class="member-info">IFM/BIT/2025</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <span>MJ</span>
+                    </div>
+                    <h3>MASHAKA M JAWABU</h3>
+                    <p class="member-role">Backend Developer</p>
+                    <p class="member-info">IFM/BIT/2025</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <span>TW</span>
+                    </div>
+                    <h3>TACHERA W SASI</h3>
+                    <p class="member-role">Full Stack Developer</p>
+                    <p class="member-info">IFM/BIT/2025</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <span>IB</span>
+                    </div>
+                    <h3>INNOCENT BONIFACE MKONJI</h3>
+                    <p class="member-role">Systems Architect</p>
+                    <p class="member-info">IFM/BIT/2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <span class="nav-logo">🤖</span>
+                        <span class="nav-title">Ellie</span>
+                    </div>
+                    <p>The AI-powered CLI companion that transforms your terminal experience.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#installation">Installation</a>
+                        <a href="docs.html">Documentation</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Community</h4>
+                        <a href="https://github.com/tacheraSasi/ellie" target="_blank">GitHub</a>
+                        <a href="#discord">Discord</a>
+                        <a href="#twitter">Twitter</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#help">Help Center</a>
+                        <a href="#issues">Report Issues</a>
+                        <a href="#contribute">Contribute</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ellie CLI. Built with ❤️ by IFM TEAM</p>
+                <p>Because terminal shouldn't mean terminal boredom!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
