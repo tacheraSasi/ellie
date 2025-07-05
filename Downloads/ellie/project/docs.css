@@ -1,0 +1,721 @@
+/* Documentation-specific styles */
+
+.docs-layout {
+  display: flex;
+  min-height: calc(100vh - 64px);
+  margin-top: 64px;
+}
+
+.docs-sidebar {
+  width: 280px;
+  background: white;
+  border-right: 1px solid var(--gray-200);
+  position: fixed;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sidebar-content {
+  padding: var(--space-6);
+}
+
+.sidebar-section {
+  margin-bottom: var(--space-8);
+}
+
+.sidebar-section h3 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-900);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+.sidebar-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-section li {
+  margin-bottom: var(--space-1);
+}
+
+.sidebar-link {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--gray-600);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  font-size: var(--font-size-sm);
+}
+
+.sidebar-link:hover {
+  background: var(--gray-50);
+  color: var(--primary);
+}
+
+.sidebar-link.active {
+  background: var(--primary);
+  color: white;
+}
+
+.docs-main {
+  flex: 1;
+  margin-left: 280px;
+  padding: var(--space-8);
+  max-width: calc(100% - 280px);
+}
+
+.docs-content {
+  max-width: 800px;
+}
+
+.docs-section {
+  margin-bottom: var(--space-16);
+  scroll-margin-top: var(--space-20);
+}
+
+.docs-section h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: var(--space-4);
+  border-bottom: 2px solid var(--gray-200);
+  padding-bottom: var(--space-4);
+}
+
+.docs-section h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: var(--space-8) 0 var(--space-4) 0;
+}
+
+.docs-section h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--gray-800);
+  margin: var(--space-6) 0 var(--space-3) 0;
+}
+
+.docs-section h4 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-800);
+  margin: var(--space-4) 0 var(--space-2) 0;
+}
+
+.docs-section p {
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.docs-section ul, .docs-section ol {
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.docs-section li {
+  margin-bottom: var(--space-2);
+}
+
+.lead {
+  font-size: var(--font-size-lg);
+  color: var(--gray-700);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.info-box {
+  display: flex;
+  gap: var(--space-3);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.info-icon {
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+.info-content {
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+/* Installation Grid */
+.install-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.install-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.install-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.install-card.recommended {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.install-header {
+  background: var(--gray-50);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.install-card.recommended .install-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.install-icon {
+  font-size: var(--font-size-xl);
+}
+
+.install-header h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+.install-badge {
+  background: var(--gray-200);
+  color: var(--gray-700);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 12px;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.install-card.recommended .install-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.install-content {
+  padding: var(--space-4);
+}
+
+.install-notes {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--gray-200);
+}
+
+.install-notes h4 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: var(--space-2);
+}
+
+.install-notes ul {
+  margin: 0;
+  padding-left: var(--space-4);
+}
+
+.install-notes li {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin-bottom: var(--space-1);
+}
+
+/* Code blocks in docs */
+.docs-section .code-block {
+  background: var(--gray-900);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  margin: var(--space-4) 0;
+  box-shadow: var(--shadow-md);
+}
+
+.docs-section .code-header {
+  background: var(--gray-800);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-700);
+  font-size: var(--font-size-sm);
+  color: var(--gray-300);
+}
+
+.docs-section .code-content,
+.docs-section .code-block pre {
+  padding: var(--space-4);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--gray-100);
+  overflow-x: auto;
+  margin: 0;
+}
+
+.docs-section .code-block code {
+  color: var(--gray-100);
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.copy-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Verification section */
+.verification-section {
+  background: var(--gray-50);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  color: var(--success);
+  font-weight: 500;
+}
+
+.success-icon {
+  font-size: var(--font-size-lg);
+}
+
+/* Platform configs */
+.platform-configs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.platform-config {
+  background: var(--gray-50);
+  padding: var(--space-4);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.platform-config h3 {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-size-base);
+}
+
+.platform-config code {
+  background: var(--gray-800);
+  color: var(--gray-100);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: var(--font-size-sm);
+  display: block;
+  margin-top: var(--space-2);
+}
+
+/* Configuration table */
+.config-table {
+  overflow-x: auto;
+  margin: var(--space-6) 0;
+}
+
+.config-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.config-table th,
+.config-table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.config-table th {
+  background: var(--gray-50);
+  font-weight: 600;
+  color: var(--gray-900);
+  font-size: var(--font-size-sm);
+}
+
+.config-table td {
+  color: var(--gray-600);
+  font-size: var(--font-size-sm);
+}
+
+.config-table code {
+  background: var(--gray-100);
+  color: var(--gray-800);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: var(--font-size-xs);
+}
+
+/* Quick start steps */
+.quick-start-steps {
+  display: grid;
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.step-card {
+  display: flex;
+  gap: var(--space-4);
+  background: white;
+  padding: var(--space-6);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.step-number {
+  background: var(--primary);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  margin: 0 0 var(--space-2) 0;
+  color: var(--gray-900);
+}
+
+.step-content p {
+  margin-bottom: var(--space-3);
+}
+
+/* Tips section */
+.tips-section {
+  background: var(--gray-50);
+  border-radius: var(--border-radius-xl);
+  padding: var(--space-8);
+  margin: var(--space-12) 0;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.tip-card {
+  background: white;
+  padding: var(--space-4);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.tip-card h4 {
+  margin: 0 0 var(--space-2) 0;
+  color: var(--gray-900);
+  font-size: var(--font-size-base);
+}
+
+.tip-card p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+/* Command grids */
+.command-grid,
+.feature-grid,
+.info-grid,
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.command-card,
+.feature-item,
+.info-item,
+.service-item {
+  background: white;
+  padding: var(--space-4);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.command-card:hover,
+.feature-item:hover,
+.info-item:hover,
+.service-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.command-card h4 {
+  margin: 0 0 var(--space-2) 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: var(--font-size-sm);
+  color: var(--primary);
+  background: var(--gray-50);
+  padding: var(--space-2);
+  border-radius: var(--border-radius);
+}
+
+.service-icon {
+  font-size: var(--font-size-2xl);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+/* AI features */
+.ai-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.ai-feature {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: var(--space-4);
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s ease;
+}
+
+.ai-feature:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ai-feature h4 {
+  margin: 0 0 var(--space-2) 0;
+  color: white;
+}
+
+.ai-feature p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Alias examples */
+.alias-examples {
+  display: grid;
+  gap: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.alias-category h4 {
+  margin-bottom: var(--space-3);
+  color: var(--gray-900);
+}
+
+/* Automation steps */
+.automation-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.automation-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: white;
+  padding: var(--space-4);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.step-icon {
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+.automation-step h4 {
+  margin: 0 0 var(--space-1) 0;
+  color: var(--gray-900);
+}
+
+.automation-step p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+/* Troubleshooting */
+.troubleshoot-item {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.troubleshoot-item h4 {
+  margin: 0 0 var(--space-3) 0;
+  color: var(--error);
+}
+
+.troubleshoot-item p {
+  margin-bottom: var(--space-3);
+}
+
+/* Help options */
+.help-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.help-option {
+  background: white;
+  padding: var(--space-4);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.help-option h4 {
+  margin: 0 0 var(--space-2) 0;
+  color: var(--gray-900);
+}
+
+.help-option p {
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+/* Navigation enhancements */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Responsive design for docs */
+@media (max-width: 1024px) {
+  .docs-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .docs-sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .docs-main {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .install-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .docs-main {
+    padding: var(--space-4);
+  }
+  
+  .docs-section h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .command-grid,
+  .feature-grid,
+  .info-grid,
+  .services-grid,
+  .tips-grid,
+  .automation-steps,
+  .help-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .step-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .automation-step {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Inline code styling */
+.docs-section p code,
+.docs-section li code,
+.docs-section td code:not(.config-table code) {
+  background: var(--gray-100);
+  color: var(--gray-800);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  font-weight: 500;
+}
