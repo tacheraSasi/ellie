@@ -105,6 +105,24 @@ sudo tar -C /usr/local/bin -xzvf ellie_mac_amd64.tar.gz`
     title: 'macOS Apple Silicon Installation',
     code: `curl -O -L https://github.com/tacheraSasi/ellie/releases/download/0.0.91/ellie_mac_arm64.tar.gz
 sudo tar -C /usr/local/bin -xzvf ellie_mac_arm64.tar.gz`
+  },
+  windows: {
+    title: 'Windows Installation',
+    code: `<p>1. Download the executable:</p>\
+<a href="./downloads/ellie.exe" class="btn-primary mb-4" download>🚀 Download ellie.exe</a>\
+<p class="mt-4">2. Open a terminal (PowerShell or Command Prompt) and navigate to the directory where you saved the file.</p>\
+<p>3. Run the following command to get started:</p>\
+<code>.\\ellie.exe --help</code>`
+  },
+  linux: {
+    title: 'Linux Installation',
+    code: `<p>1. Download the executable:</p>\
+<a href="./downloads/ellie_linux" class="btn-primary mb-4" download>🚀 Download ellie_linux</a>\
+<p class="mt-4">2. Open a terminal and navigate to the directory where you saved the file.</p>\
+<p>3. Make the file executable:</p>\
+<code>chmod +x ./ellie_linux</code>\
+<p class="mt-4">4. Run the following command to get started:</p>\
+<code>./ellie_linux --help</code>`
   }
 };
 
@@ -305,18 +323,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function switchInstallMethod(method) {
   currentInstallMethod = method;
-  
+
   // Update active state
   document.querySelectorAll('.install-method').forEach(m => {
     m.classList.remove('active');
   });
   document.querySelector(`[data-method="${method}"]`).classList.add('active');
-  
+
   // Update code content
   const methodData = installMethods[method];
   if (methodData) {
     codeTitle.textContent = methodData.title;
-    codeContent.querySelector('code').textContent = methodData.code;
+    if (method === 'windows' || method === 'linux') {
+      copyBtn.style.display = 'none';
+      codeContent.innerHTML = methodData.code;
+    } else {
+      copyBtn.style.display = 'flex';
+      codeContent.innerHTML = `<code>${methodData.code}</code>`;
+    }
   }
 }
 

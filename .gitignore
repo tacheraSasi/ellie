@@ -1,3 +1,9 @@
 .pat
 .env
 ellie
+
+# ignore go.sum
+go.sum
+
+# ignore go.sum
+go.sum
