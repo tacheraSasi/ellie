@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Ellie CLI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <span class="nav-logo">🤖</span>
+                    <span class="nav-title">Ellie</span>
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#installation">Install</a>
+                <a href="docs.html" class="active">Docs</a>
+                <a href="https://github.com/tacheraSasi/ellie" target="_blank" class="nav-cta">GitHub</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Getting Started</h3>
+                    <ul>
+                        <li><a href="#overview" class="sidebar-link active">Overview</a></li>
+                        <li><a href="#installation" class="sidebar-link">Installation</a></li>
+                        <li><a href="#configuration" class="sidebar-link">Configuration</a></li>
+                        <li><a href="#quick-start" class="sidebar-link">Quick Start</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Core Features</h3>
+                    <ul>
+                        <li><a href="#git-workflows" class="sidebar-link">Git Workflows</a></li>
+                        <li><a href="#todo-management" class="sidebar-link">Todo Management</a></li>
+                        <li><a href="#project-switching" class="sidebar-link">Project Switching</a></li>
+                        <li><a href="#service-control" class="sidebar-link">Service Control</a></li>
+                        <li><a href="#ai-integration" class="sidebar-link">AI Integration</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Advanced</h3>
+                    <ul>
+                        <li><a href="#aliases" class="sidebar-link">Custom Aliases</a></li>
+                        <li><a href="#automation" class="sidebar-link">Task Automation</a></li>
+                        <li><a href="#troubleshooting" class="sidebar-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-content">
+                <!-- Overview Section -->
+                <section id="overview" class="docs-section">
+                    <h1>Ellie CLI Documentation</h1>
+                    <p class="lead">Welcome to Ellie - The AI-powered CLI companion that transforms your terminal experience with intelligent automation, Git workflows, and productivity hacks.</p>
+                    
+                    <div class="info-box">
+                        <div class="info-icon">ℹ️</div>
+                        <div class="info-content">
+                            <strong>Current Version:</strong> 0.0.91<br>
+                            <strong>Platforms:</strong> macOS, Linux, Windows<br>
+                            <strong>License:</strong> MIT
+                        </div>
+                    </div>
+
+                    <h2>What is Ellie?</h2>
+                    <p>Ellie is a next-generation AI-powered Command Line Interface (CLI) tool designed to automate and streamline development tasks such as coding, debugging, project management, and DevOps workflows. Built for developers who love efficiency, Ellie integrates intelligent automation into your terminal workflow.</p>
+
+                    <h3>Key Benefits</h3>
+                    <ul>
+                        <li><strong>Time-Saving Automation:</strong> Automate repetitive tasks like running tests, debugging, and CI/CD pipeline configuration</li>
+                        <li><strong>Unified Tooling:</strong> Eliminate context switching between multiple development tools</li>
+                        <li><strong>Beginner-Friendly:</strong> Simplified commands and intelligent suggestions for newcomers</li>
+                        <li><strong>Enhanced Debugging:</strong> Integrated debugging assistance with AI-powered solutions</li>
+                        <li><strong>Real-time Collaboration:</strong> Built-in collaboration features for team workflows</li>
+                    </ul>
+                </section>
+
+                <!-- Installation Section -->
+                <section id="installation" class="docs-section">
+                    <h1>Installation Guide</h1>
+                    <p>Choose your preferred installation method based on your operating system and setup preferences.</p>
+
+                    <div class="install-grid">
+                        <!-- Homebrew Installation -->
+                        <div class="install-card recommended">
+                            <div class="install-header">
+                                <span class="install-icon">🍺</span>
+                                <h3>Homebrew (Recommended)</h3>
+                                <span class="install-badge">macOS & Linux</span>
+                            </div>
+                            <div class="install-content">
+                                <p>The easiest way to install and manage Ellie updates.</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Terminal</span>
+                                        <button class="copy-btn" data-copy="brew-install">Copy</button>
+                                    </div>
+                                    <pre><code id="brew-install"># One-time setup
+brew tap beyondEllie/ellie
+
+# Install CLI
+brew install ellie</code></pre>
+                                </div>
+                                <div class="install-notes">
+                                    <h4>Benefits:</h4>
+                                    <ul>
+                                        <li>Automatic dependency management</li>
+                                        <li>Easy updates with <code>brew upgrade ellie</code></li>
+                                        <li>Uninstall with <code>brew uninstall ellie</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- macOS Intel -->
+                        <div class="install-card">
+                            <div class="install-header">
+                                <span class="install-icon">🖥️</span>
+                                <h3>macOS Intel</h3>
+                                <span class="install-badge">x86_64</span>
+                            </div>
+                            <div class="install-content">
+                                <p>Direct installation for Intel-based Macs.</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Terminal</span>
+                                        <button class="copy-btn" data-copy="macos-intel">Copy</button>
+                                    </div>
+                                    <pre><code id="macos-intel"># Download and install
+curl -O -L https://github.com/tacheraSasi/ellie/releases/download/0.0.91/ellie_mac_amd64.tar.gz
+sudo tar -C /usr/local/bin -xzvf ellie_mac_amd64.tar.gz
+
+# Make executable
+sudo chmod +x /usr/local/bin/ellie</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- macOS Apple Silicon -->
+                        <div class="install-card">
+                            <div class="install-header">
+                                <span class="install-icon">💻</span>
+                                <h3>macOS Apple Silicon</h3>
+                                <span class="install-badge">ARM64</span>
+                            </div>
+                            <div class="install-content">
+                                <p>Optimized for M1/M2/M3 Macs.</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Terminal</span>
+                                        <button class="copy-btn" data-copy="macos-silicon">Copy</button>
+                                    </div>
+                                    <pre><code id="macos-silicon"># Download and install
+curl -O -L https://github.com/tacheraSasi/ellie/releases/download/0.0.91/ellie_mac_arm64.tar.gz
+sudo tar -C /usr/local/bin -xzvf ellie_mac_arm64.tar.gz
+
+# Make executable
+sudo chmod +x /usr/local/bin/ellie</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Linux -->
+                        <div class="install-card">
+                            <div class="install-header">
+                                <span class="install-icon">🐧</span>
+                                <h3>Linux</h3>
+                                <span class="install-badge">x86_64</span>
+                            </div>
+                            <div class="install-content">
+                                <p>Compatible with most Linux distributions.</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Terminal</span>
+                                        <button class="copy-btn" data-copy="linux-install">Copy</button>
+                                    </div>
+                                    <pre><code id="linux-install"># Download and install
+curl -O -L https://github.com/tacheraSasi/ellie/releases/download/0.0.91/ellie_linux_amd64.tar.gz
+sudo tar -C /usr/local/bin -xzvf ellie_linux_amd64.tar.gz
+
+# Make executable
+sudo chmod +x /usr/local/bin/ellie</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Windows -->
+                        <div class="install-card">
+                            <div class="install-header">
+                                <span class="install-icon">🪟</span>
+                                <h3>Windows</h3>
+                                <span class="install-badge">x86_64</span>
+                            </div>
+                            <div class="install-content">
+                                <p>PowerShell or Command Prompt installation.</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>PowerShell</span>
+                                        <button class="copy-btn" data-copy="windows-install">Copy</button>
+                                    </div>
+                                    <pre><code id="windows-install"># Download using PowerShell
+Invoke-WebRequest -Uri "https://github.com/tacheraSasi/ellie/releases/download/0.0.91/ellie_windows_amd64.zip" -OutFile "ellie.zip"
+
+# Extract and move to PATH
+Expand-Archive -Path "ellie.zip" -DestinationPath "C:\Program Files\Ellie"
+# Add C:\Program Files\Ellie to your PATH environment variable</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Build from Source -->
+                        <div class="install-card">
+                            <div class="install-header">
+                                <span class="install-icon">🔨</span>
+                                <h3>Build from Source</h3>
+                                <span class="install-badge">All Platforms</span>
+                            </div>
+                            <div class="install-content">
+                                <p>For developers who want the latest features.</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Terminal</span>
+                                        <button class="copy-btn" data-copy="build-source">Copy</button>
+                                    </div>
+                                    <pre><code id="build-source"># Clone repository
+git clone https://github.com/tacheraSasi/ellie.git
+cd ellie
+
+# Install dependencies
+go mod download
+
+# Build
+make build
+# or
+go build -o ellie
+
+# Install globally
+sudo mv ellie /usr/local/bin/</code></pre>
+                                </div>
+                                <div class="install-notes">
+                                    <h4>Requirements:</h4>
+                                    <ul>
+                                        <li>Go 1.19 or higher</li>
+                                        <li>Git</li>
+                                        <li>Make (optional)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="verification-section">
+                        <h2>Verify Installation</h2>
+                        <p>After installation, verify that Ellie is working correctly:</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Verification</span>
+                                <button class="copy-btn" data-copy="verify">Copy</button>
+                            </div>
+                            <pre><code id="verify">ellie --version</code></pre>
+                        </div>
+                        <div class="success-message">
+                            <span class="success-icon">✅</span>
+                            <span>Expected output: <code>Ellie CLI Version: 0.0.91</code></span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Configuration Section -->
+                <section id="configuration" class="docs-section">
+                    <h1>Configuration</h1>
+                    <p>Set up Ellie with your personal preferences and API keys for the best experience.</p>
+
+                    <h2>Initial Setup</h2>
+                    <p>When you first run Ellie, it will automatically prompt you to configure your settings:</p>
+                    <div class="code-block">
+                        <pre><code>$ ellie
+🔧 Setting up Ellie CLI configuration...
+-> Enter your username: YourName
+-> Enter your OpenAI API key: sk-123...
+-> Enter your Email (optional): you@example.com
+✅ Configuration saved successfully!</code></pre>
+                    </div>
+
+                    <h2>Configuration File Location</h2>
+                    <div class="platform-configs">
+                        <div class="platform-config">
+                            <h3>🐧 Linux / 🍎 macOS</h3>
+                            <code>~/.ellie/.ellie.env</code>
+                        </div>
+                        <div class="platform-config">
+                            <h3>🪟 Windows</h3>
+                            <code>%HOMEPATH%\.ellie\.ellie.env</code>
+                        </div>
+                    </div>
+
+                    <h2>Manual Configuration</h2>
+                    <p>You can manually edit the configuration file:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>~/.ellie/.ellie.env</span>
+                        </div>
+                        <pre><code>USERNAME=YourName
+OPENAI_API_KEY=sk-your-api-key-here
+EMAIL=you@example.com
+THEME=dark
+AUTO_UPDATE=true</code></pre>
+                    </div>
+
+                    <h2>Configuration Options</h2>
+                    <div class="config-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Description</th>
+                                    <th>Default</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>USERNAME</code></td>
+                                    <td>Your preferred username for personalization</td>
+                                    <td>-</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>OPENAI_API_KEY</code></td>
+                                    <td>OpenAI API key for AI features</td>
+                                    <td>-</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>EMAIL</code></td>
+                                    <td>Email for Git configuration</td>
+                                    <td>-</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td><code>THEME</code></td>
+                                    <td>Terminal theme (dark/light)</td>
+                                    <td>dark</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td><code>AUTO_UPDATE</code></td>
+                                    <td>Enable automatic updates</td>
+                                    <td>true</td>
+                                    <td>No</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Quick Start Section -->
+                <section id="quick-start" class="docs-section">
+                    <h1>Quick Start Guide</h1>
+                    <p>Get up and running with Ellie in just a few minutes!</p>
+
+                    <div class="quick-start-steps">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>First Run</h3>
+                                <p>Start Ellie and complete the initial configuration:</p>
+                                <div class="code-block">
+                                    <pre><code>ellie</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Try Basic Commands</h3>
+                                <p>Test some essential Ellie features:</p>
+                                <div class="code-block">
+                                    <pre><code># Check system information
+ellie sysinfo
+
+# View network status
+ellie network-status
+
+# Start your development day
+ellie start-day</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Set Up Your First Project</h3>
+                                <p>Add a project for quick switching:</p>
+                                <div class="code-block">
+                                    <pre><code># Add a project
+ellie project add myapp ~/projects/myapp "My Application" web,react
+
+# Switch to the project
+ellie switch myapp</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Create Your First Todo</h3>
+                                <p>Start managing tasks with Ellie:</p>
+                                <div class="code-block">
+                                    <pre><code># Add a todo with category and priority
+ellie todo add "Implement user authentication" backend high
+
+# View your todos
+ellie todo list</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tips-section">
+                        <h2>💡 Pro Tips</h2>
+                        <div class="tips-grid">
+                            <div class="tip-card">
+                                <h4>🚀 Git Automation</h4>
+                                <p>Use <code>ellie git commit</code> for guided conventional commits that follow best practices.</p>
+                            </div>
+                            <div class="tip-card">
+                                <h4>⚡ Custom Aliases</h4>
+                                <p>Create shortcuts with <code>ellie alias add gs="git status"</code> for frequently used commands.</p>
+                            </div>
+                            <div class="tip-card">
+                                <h4>🤖 AI Help</h4>
+                                <p>Just run <code>ellie</code> without arguments to start an AI chat session for instant help.</p>
+                            </div>
+                            <div class="tip-card">
+                                <h4>📊 Daily Routine</h4>
+                                <p>Customize your <code>ellie start-day</code> routine to open apps and start services automatically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Git Workflows Section -->
+                <section id="git-workflows" class="docs-section">
+                    <h1>Git Workflows</h1>
+                    <p>Ellie supercharges your Git workflow with intelligent automation and conventional commit support.</p>
+
+                    <h2>Conventional Commits</h2>
+                    <p>Create professional, standardized commit messages with interactive guidance:</p>
+                    <div class="code-block">
+                        <pre><code>$ ellie git commit
+📝 Conventional Commit Builder
+─────────────────────────────
+🔧 Type (feat, fix, docs, style, refactor, perf, test, chore, revert) ➜ feat
+🎯 Scope (optional) ➜ auth
+📌 Description ➜ Add OAuth2 support
+💬 Body (optional):
+◎ Press Enter twice to finish:
+Implemented Google and GitHub providers
+Updated configuration schema
+
+💥 Breaking change? (Y/n) ➜ y
+📣 Breaking change details ➜ Changed config format
+🔗 Issue number (optional) ➜ 42
+
+✨ Commit Preview:
+──────────────────
+feat(auth): Add OAuth2 support
+
+Implemented Google and GitHub providers
+Updated configuration schema
+
+BREAKING CHANGE: Changed config format
+
+Refs #42
+──────────────────
+✅ Successfully committed and pushed!</code></pre>
+                    </div>
+
+                    <h2>Git Commands</h2>
+                    <div class="command-grid">
+                        <div class="command-card">
+                            <h4><code>ellie git status</code></h4>
+                            <p>Enhanced Git status with colorized output and helpful suggestions.</p>
+                        </div>
+                        <div class="command-card">
+                            <h4><code>ellie git commit</code></h4>
+                            <p>Interactive conventional commit builder with validation.</p>
+                        </div>
+                        <div class="command-card">
+                            <h4><code>ellie git push</code></h4>
+                            <p>Smart push with pre-checks and conflict detection.</p>
+                        </div>
+                        <div class="command-card">
+                            <h4><code>ellie setup-git</code></h4>
+                            <p>Configure Git credentials and settings securely.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Todo Management Section -->
+                <section id="todo-management" class="docs-section">
+                    <h1>Todo Management</h1>
+                    <p>Keep track of your tasks with Ellie's lightweight but powerful todo system.</p>
+
+                    <h2>Basic Todo Operations</h2>
+                    <div class="code-block">
+                        <pre><code># Add a simple todo
+ellie todo add "Fix login bug"
+
+# Add todo with category and priority
+ellie todo add "Implement OAuth" backend high
+
+# List all todos
+ellie todo list
+
+# Complete a todo
+ellie todo complete 1
+
+# Delete a todo
+ellie todo delete 2
+
+# Edit todo priority
+ellie todo edit 1 priority medium</code></pre>
+                    </div>
+
+                    <h2>Categories and Priorities</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>📁 Categories</h4>
+                            <p>Organize todos by project area:</p>
+                            <ul>
+                                <li>backend</li>
+                                <li>frontend</li>
+                                <li>api</li>
+                                <li>docs</li>
+                                <li>testing</li>
+                            </ul>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🎯 Priorities</h4>
+                            <p>Set task importance levels:</p>
+                            <ul>
+                                <li>🔴 high</li>
+                                <li>🟡 medium</li>
+                                <li>🟢 low</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>Example Output</h2>
+                    <div class="code-block">
+                        <pre><code>$ ellie todo list
+Your todos:
+📁 backend:
+  ❌ #1: Fix login bug 🔴 High
+  ✅ #2: Update API docs 🟡 Medium
+📁 frontend:
+  ❌ #3: Responsive design 🟢 Low</code></pre>
+                    </div>
+                </section>
+
+                <!-- Project Switching Section -->
+                <section id="project-switching" class="docs-section">
+                    <h1>Project Switching</h1>
+                    <p>Navigate between projects instantly with Ellie's smart project management.</p>
+
+                    <h2>Project Management Commands</h2>
+                    <div class="code-block">
+                        <pre><code># Add a new project
+ellie project add api ~/projects/api "API Service" backend,nodejs
+
+# List all projects
+ellie project list
+
+# Search projects by name, tag, or description
+ellie project search nodejs
+
+# Switch to a project
+ellie switch api
+
+# Remove a project
+ellie project remove api</code></pre>
+                    </div>
+
+                    <h2>Project Information</h2>
+                    <p>Each project stores comprehensive metadata:</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h4>📝 Name</h4>
+                            <p>Short identifier for quick switching</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>📂 Path</h4>
+                            <p>Full filesystem path to project directory</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>📋 Description</h4>
+                            <p>Human-readable project description</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>🏷️ Tags</h4>
+                            <p>Searchable keywords (e.g., react, api, backend)</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>⏰ Last Used</h4>
+                            <p>Timestamp of last project access</p>
+                        </div>
+                    </div>
+
+                    <h2>Example Project List</h2>
+                    <div class="code-block">
+                        <pre><code>$ ellie project list
+📁 api
+   📝 API Service
+   📂 /Users/me/projects/api
+   🏷️  backend, nodejs
+   ⏰ Last used: 2 hours ago
+
+📁 frontend
+   📝 React Dashboard
+   📂 /Users/me/projects/dashboard
+   🏷️  frontend, react
+   ⏰ Last used: 1 day ago</code></pre>
+                    </div>
+                </section>
+
+                <!-- Service Control Section -->
+                <section id="service-control" class="docs-section">
+                    <h1>Service Control</h1>
+                    <p>Manage system services like Apache, MySQL, and more with simple commands.</p>
+
+                    <h2>Service Commands</h2>
+                    <div class="command-grid">
+                        <div class="command-card">
+                            <h4><code>ellie start apache</code></h4>
+                            <p>Start Apache web server</p>
+                        </div>
+                        <div class="command-card">
+                            <h4><code>ellie restart mysql</code></h4>
+                            <p>Restart MySQL database service</p>
+                        </div>
+                        <div class="command-card">
+                            <h4><code>ellie stop nginx</code></h4>
+                            <p>Stop Nginx web server</p>
+                        </div>
+                        <div class="command-card">
+                            <h4><code>ellie start all</code></h4>
+                            <p>Start all configured services</p>
+                        </div>
+                    </div>
+
+                    <h2>Supported Services</h2>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <span class="service-icon">🌐</span>
+                            <h4>Web Servers</h4>
+                            <ul>
+                                <li>Apache</li>
+                                <li>Nginx</li>
+                                <li>Caddy</li>
+                            </ul>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-icon">🗄️</span>
+                            <h4>Databases</h4>
+                            <ul>
+                                <li>MySQL</li>
+                                <li>PostgreSQL</li>
+                                <li>MongoDB</li>
+                                <li>Redis</li>
+                            </ul>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-icon">🔧</span>
+                            <h4>Development</h4>
+                            <ul>
+                                <li>Docker</li>
+                                <li>Node.js</li>
+                                <li>PHP-FPM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI Integration Section -->
+                <section id="ai-integration" class="docs-section">
+                    <h1>AI Integration</h1>
+                    <p>Leverage the power of AI for coding assistance, debugging, and intelligent suggestions.</p>
+
+                    <h2>AI Chat Mode</h2>
+                    <p>Start an interactive AI session by running Ellie without arguments:</p>
+                    <div class="code-block">
+                        <pre><code>$ ellie
+🤖 Ellie AI Assistant
+Talk to me: How do I fix a 500 error in Apache?
+
+🧠 AI Response:
+A 500 Internal Server Error in Apache typically indicates a server-side issue. Here are the most common causes and solutions:
+
+1. **Check Error Logs**
+   ```bash
+   sudo tail -f /var/log/apache2/error.log
+   ```
+
+2. **File Permissions**
+   - Ensure files have correct permissions (644 for files, 755 for directories)
+   - Check that Apache can read your document root
+
+3. **Configuration Syntax**
+   ```bash
+   sudo apache2ctl configtest
+   ```
+
+Would you like me to help you check any of these specific areas?</code></pre>
+                    </div>
+
+                    <h2>AI-Powered Features</h2>
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <h4>🔍 Code Review</h4>
+                            <p>Get intelligent suggestions for code improvements and best practices.</p>
+                        </div>
+                        <div class="ai-feature">
+                            <h4>🐛 Debug Assistant</h4>
+                            <p>Analyze error messages and get step-by-step debugging guidance.</p>
+                        </div>
+                        <div class="ai-feature">
+                            <h4>📚 Documentation Help</h4>
+                            <p>Get explanations for commands, APIs, and configuration options.</p>
+                        </div>
+                        <div class="ai-feature">
+                            <h4>⚡ Command Suggestions</h4>
+                            <p>Receive intelligent command recommendations based on your workflow.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Aliases Section -->
+                <section id="aliases" class="docs-section">
+                    <h1>Custom Aliases</h1>
+                    <p>Create shortcuts for frequently used commands to boost your productivity.</p>
+
+                    <h2>Alias Management</h2>
+                    <div class="code-block">
+                        <pre><code># Create a new alias
+ellie alias add gs="git status"
+ellie alias add gc="git commit"
+ellie alias add gp="git push"
+
+# List all aliases
+ellie alias list
+
+# Delete an alias
+ellie alias delete gs
+
+# Use an alias
+ellie gs  # equivalent to: git status</code></pre>
+                    </div>
+
+                    <h2>Popular Alias Examples</h2>
+                    <div class="alias-examples">
+                        <div class="alias-category">
+                            <h4>Git Shortcuts</h4>
+                            <div class="code-block">
+                                <pre><code>ellie alias add gs="git status"
+ellie alias add ga="git add ."
+ellie alias add gc="git commit"
+ellie alias add gp="git push"
+ellie alias add gl="git log --oneline"</code></pre>
+                            </div>
+                        </div>
+                        <div class="alias-category">
+                            <h4>Development Shortcuts</h4>
+                            <div class="code-block">
+                                <pre><code>ellie alias add dev="npm run dev"
+ellie alias add build="npm run build"
+ellie alias add test="npm test"
+ellie alias add lint="npm run lint"</code></pre>
+                            </div>
+                        </div>
+                        <div class="alias-category">
+                            <h4>System Shortcuts</h4>
+                            <div class="code-block">
+                                <pre><code>ellie alias add ll="ls -la"
+ellie alias add ..="cd .."
+ellie alias add home="cd ~"
+ellie alias add reload="source ~/.bashrc"</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Automation Section -->
+                <section id="automation" class="docs-section">
+                    <h1>Task Automation</h1>
+                    <p>Automate your daily development routine with Ellie's powerful automation features.</p>
+
+                    <h2>Daily Startup Routine</h2>
+                    <p>Configure Ellie to start your development day automatically:</p>
+                    <div class="code-block">
+                        <pre><code># Configure your daily startup
+ellie day-start add apps "code,terminal,browser"
+ellie day-start add services "mysql,apache"
+ellie day-start add git_repos "~/projects/api,~/projects/frontend"
+
+# View your configuration
+ellie day-start list
+
+# Start your development day
+ellie start-day</code></pre>
+                    </div>
+
+                    <h2>What start-day Does</h2>
+                    <div class="automation-steps">
+                        <div class="automation-step">
+                            <span class="step-icon">🚀</span>
+                            <h4>Launch Applications</h4>
+                            <p>Opens your configured development applications</p>
+                        </div>
+                        <div class="automation-step">
+                            <span class="step-icon">⚙️</span>
+                            <h4>Start Services</h4>
+                            <p>Starts necessary development services (databases, web servers)</p>
+                        </div>
+                        <div class="automation-step">
+                            <span class="step-icon">📊</span>
+                            <h4>Check Git Status</h4>
+                            <p>Reviews the status of your configured Git repositories</p>
+                        </div>
+                        <div class="automation-step">
+                            <span class="step-icon">📝</span>
+                            <h4>Show Pending Tasks</h4>
+                            <p>Displays your incomplete todos to plan your day</p>
+                        </div>
+                    </div>
+
+                    <h2>Example Output</h2>
+                    <div class="code-block">
+                        <pre><code>$ ellie start-day
+🌅 Starting your development day...
+✅ Opening applications...  
+✅ Starting services...
+✅ Checking Git repositories...
+📝 Pending tasks:
+❌ #1: Fix login bug [backend] 🔴 High
+❌ #3: Update documentation [docs] 🟡 Medium
+🚀 Your development environment is ready!</code></pre>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting Section -->
+                <section id="troubleshooting" class="docs-section">
+                    <h1>Troubleshooting</h1>
+                    <p>Common issues and their solutions to keep Ellie running smoothly.</p>
+
+                    <h2>Installation Issues</h2>
+                    <div class="troubleshoot-item">
+                        <h4>❌ Command not found: ellie</h4>
+                        <p><strong>Solution:</strong> Ensure Ellie is in your PATH. For manual installations:</p>
+                        <div class="code-block">
+                            <pre><code># Check if ellie is in PATH
+which ellie
+
+# Add to PATH (add to ~/.bashrc or ~/.zshrc)
+export PATH="/usr/local/bin:$PATH"
+
+# Reload shell configuration
+source ~/.bashrc  # or ~/.zshrc</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="troubleshoot-item">
+                        <h4>❌ Permission denied</h4>
+                        <p><strong>Solution:</strong> Make sure the binary has execute permissions:</p>
+                        <div class="code-block">
+                            <pre><code>sudo chmod +x /usr/local/bin/ellie</code></pre>
+                        </div>
+                    </div>
+
+                    <h2>Configuration Issues</h2>
+                    <div class="troubleshoot-item">
+                        <h4>❌ OpenAI API errors</h4>
+                        <p><strong>Solution:</strong> Verify your API key is correct and has sufficient credits:</p>
+                        <div class="code-block">
+                            <pre><code># Check your configuration
+cat ~/.ellie/.ellie.env
+
+# Reconfigure if needed
+ellie config reset</code></pre>
+                        </div>
+                    </div>
+
+                    <h2>Service Control Issues</h2>
+                    <div class="troubleshoot-item">
+                        <h4>❌ Service start/stop failures</h4>
+                        <p><strong>Solution:</strong> Ensure you have proper permissions and the service is installed:</p>
+                        <div class="code-block">
+                            <pre><code># Check if service exists
+systemctl status apache2  # Linux
+brew services list | grep apache  # macOS
+
+# Check Ellie's service detection
+ellie sysinfo</code></pre>
+                        </div>
+                    </div>
+
+                    <h2>Getting Help</h2>
+                    <div class="help-options">
+                        <div class="help-option">
+                            <h4>🤖 AI Assistant</h4>
+                            <p>Use Ellie's built-in AI for instant help:</p>
+                            <div class="code-block">
+                                <pre><code>ellie
+Talk to me: I'm having trouble with...</code></pre>
+                            </div>
+                        </div>
+                        <div class="help-option">
+                            <h4>📚 Built-in Help</h4>
+                            <p>Access command-specific help:</p>
+                            <div class="code-block">
+                                <pre><code>ellie --help
+ellie git --help
+ellie todo --help</code></pre>
+                            </div>
+                        </div>
+                        <div class="help-option">
+                            <h4>🐛 Report Issues</h4>
+                            <p>Found a bug? Report it on GitHub:</p>
+                            <a href="https://github.com/tacheraSasi/ellie/issues" target="_blank" class="btn-primary">Report Issue</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="docs.js"></script>
+</body>
+</html>
