@@ -23,6 +23,7 @@ func ShowHelp() {
 	fmt.Println("  send-mail\t\tSend an email")
 	fmt.Println("  focus\t\t\tActivate focus mode")
 	fmt.Println("  review <filename/path>\tReview code or files using LLMs")
+	fmt.Println("  md <filename>\t\tRender markdown files in terminal")
 	fmt.Println("  run <command>\t\tExecute system commands")
 	fmt.Println("  pwd\t\t\tPrint working directory")
 	fmt.Println("  open-explorer\t\tOpen the current dir in file explorer")

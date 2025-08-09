@@ -321,4 +321,9 @@ var Registry = map[string]Command{
 			},
 		},
 	},
+	"md": {
+		Usage:   "md <filename>",
+		MinArgs: 1,
+		Handler: actions.MarkdownRender,
+	},
 }
