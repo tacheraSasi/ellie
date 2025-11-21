@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
@@ -31,7 +30,7 @@ func main() {
 
 	go func() {
 		<-sigChan
-		styles.GetErrorStyle().Printf("\nellie  v%s\n", VERSION)
+		styles.GetErrorStyle().Printf("\nellie Terminated gracefully\n")
 		os.Exit(0)
 	}()
 
