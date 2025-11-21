@@ -5,7 +5,6 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"time"
 
 	actions "github.com/tacheraSasi/ellie/action"
 	"github.com/tacheraSasi/ellie/command"
@@ -34,7 +33,7 @@ func main() {
 		os.Exit(0)
 	}()
 
-	// Setup global flags
+	//  global flags
 	showHelp := flag.Bool("help", false, "Show help information")
 	showVersion := flag.Bool("version", false, "Show version information")
 	flag.Parse()
@@ -186,32 +185,4 @@ func handleSubCommand(parentCmd command.Command, args []string) {
 	}
 
 	subCmd.Handler(args)
-}
-
-func createServiceCommand(action string) command.Command {
-	return command.Command{
-		SubCommands: map[string]command.Command{
-			"apache":   {Handler: func(args []string) { actions.HandleService(action, "apache") }},
-			"mysql":    {Handler: func(args []string) { actions.HandleService(action, "mysql") }},
-			"postgres": {Handler: func(args []string) { actions.HandleService(action, "postgres") }},
-			"all":      {Handler: func(args []string) { actions.HandleService(action, "all") }},
-		},
-	}
-}
-
-func greetUser(args []string) {
-	hour := time.Now().Hour()
-	greeting := styles.GetSuccessStyle().Println
-	message := "Good evening!"
-
-	switch {
-	case hour < 12:
-		message = "Good morning!"
-		greeting = styles.GetHighlightStyle().Println
-	case hour < 18:
-		message = "Good afternoon!"
-		greeting = styles.GetInfoStyle().Println
-	}
-
-	greeting(message+",", CurrentUser)
 }
