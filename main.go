@@ -2,7 +2,10 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"os"
+	"os/signal"
+	"syscall"
 	"time"
 
 	actions "github.com/tacheraSasi/ellie/action"
@@ -22,8 +25,16 @@ var ICON any = static.Icon()
 // User name from the saved files during initialization
 var CurrentUser string = configs.GetEnv("USERNAME")
 
-
 func main() {
+	sigChan := make(chan os.Signal, 1)
+	signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)
+
+	go func() {
+		<-sigChan
+		styles.GetErrorStyle().Printf("\nellie  v%s\n", VERSION)
+		os.Exit(0)
+	}()
+
 	// Setup global flags
 	showHelp := flag.Bool("help", false, "Show help information")
 	showVersion := flag.Bool("version", false, "Show version information")
@@ -205,4 +216,3 @@ func greetUser(args []string) {
 
 	greeting(message+",", CurrentUser)
 }
-
